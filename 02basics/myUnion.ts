@@ -31,3 +31,12 @@ function getDbId(id: number | string) {
 
 getDbId("1")
 getDbId(1)
+
+// arrays
+const data: number[] = [1, 2, 3, 4]
+const data2: string[] = ["1", "2", "3", "4"]
+const data3: (string|number|boolean)[] = [1, "2", "3", "4", false]
+
+let seatAlottment: "aisle"|"middle"|"window"
+
+seatAlottment="aisle"
