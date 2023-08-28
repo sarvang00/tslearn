@@ -28,3 +28,11 @@ interface Bottle {
 
 // for your own
 // identityFour<Bottle>({})
+
+function getSearchProducts<T>(value: T[]): T {
+    return value[0]
+}
+
+const getMoreSearchProducts = <T>(ipVals: T[]):T => {
+    return ipVals[0]
+}
