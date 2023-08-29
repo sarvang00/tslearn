@@ -60,3 +60,43 @@ function getFood(testVar: Fish | Bird) {
         return "bird food"
     }
 }
+
+interface Circle {
+    kind: "circle",
+    radii: number
+}
+
+interface Square {
+    kind: "square",
+    side: number
+}
+
+interface Rectangle {
+    kind: "rect",
+    length: number,
+    width: number
+}
+
+type Shape = Circle | Square | Rectangle
+
+// On adding rectangle this will fall apart if all works
+function getTrueShape(shape: Shape) {
+    if(shape.kind=="circle") {
+        return Math.PI*shape.radii**2
+    }
+    // return shape.side**2
+}
+
+function getArea(shape: Shape) {
+    switch(shape.kind){
+        case "circle":
+            return Math.PI*shape.radii**2
+        case "square":
+            return shape.side**2
+        case "rect":
+            return shape.length*shape.width
+        default:
+            const _defaultShape: never = shape
+            return _defaultShape
+    }
+}
