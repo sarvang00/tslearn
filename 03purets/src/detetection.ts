@@ -42,3 +42,21 @@ function isAdminAccount(account: User | Admin) {
         return account.isAdmin
     }
 }
+
+type Fish = {swim: () => void}
+type Bird = {fly: () => void}
+
+// if fn returns true; it is Fish
+function isFish(testVar: Fish | Bird): testVar is Fish {
+    return (testVar as Fish).swim !== undefined
+}
+
+function getFood(testVar: Fish | Bird) {
+    if (isFish(testVar)) {
+        testVar
+        return "fish food"
+    } else {
+        testVar
+        return "bird food"
+    }
+}
